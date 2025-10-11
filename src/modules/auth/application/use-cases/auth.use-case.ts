@@ -6,7 +6,7 @@ import { LoginDto } from '../dto/login.dto';
 import { TecnicoEntity } from '../../domain/entities/tecnico.entity';
 import { AuthResponse } from '../output/auth.response.dto';
 import { JwtPayload } from '../interface/jwt-payload.interface';
-import { MENU_ITEMS, ROLE_TYPES } from '../../../../shared/constants/menu.constants';
+import { MENU_ITEMS, ROLE_TYPES, DOCUMENT_TYPES } from '../../../../shared/constants/menu.constants';
 
 @Injectable()
 export class AuthUseCase {
@@ -101,7 +101,10 @@ export class AuthUseCase {
         ];
 
         const payload: JwtPayload = {
-            sub: user.idTecnico, 
+            sub: user.idTecnico,
+            idTecnico: user.idTecnico,
+            tipo_documento: user.tipo_documento!,
+            num_documento: user.num_documento,
             usuario: user.usuario,
             nombre: user.nombre,
             role: ROLE_TYPES.TECNICO,
