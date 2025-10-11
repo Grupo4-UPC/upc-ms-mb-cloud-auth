@@ -31,7 +31,9 @@ export class AuthRepository
           row.nombre,
           row.telefono,
           row.estado,
-          row.fecha_creacion
+          row.fecha_creacion,
+          row.tipo_documento,
+          row.num_documento
         );
       }
     );
