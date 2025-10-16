@@ -26,7 +26,7 @@ async function bootstrap(): Promise<void> {
   app.useStaticAssets(join(__dirname, '..', 'static'), {
     prefix: '/static/',
   });
-  app.setGlobalPrefix('api/v1/solicitudes-tributarias');
+  app.setGlobalPrefix('api/v1');
 
   const config = new DocumentBuilder()
     .setTitle('API Auth Services')
